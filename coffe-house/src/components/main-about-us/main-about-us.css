@@ -1,0 +1,17 @@
+.main-about-us {    
+    margin: 0 auto;
+    text-align: center;
+    width: 500px;
+}
+.main-about-us h4 {
+    margin-top: 20px;
+}
+.main-about-us  img {
+    padding: 20px;
+}
+.main-about-us p {
+    font-size: 12px;
+}
+.main-about-us p:last-child {
+    padding-bottom: 30px;
+}
