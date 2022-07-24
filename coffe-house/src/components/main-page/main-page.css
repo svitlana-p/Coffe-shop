@@ -1,8 +1,20 @@
 
 header {
-    background-image: url(./Main\ bg.jpg);
+    background-image: url(./img/Main\ bg.jpg);
     background-position: top;
     background-repeat: no-repeat;
     height: 670px;
     color: white;
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer nav ul li a{
+    color: black;
+}
+footer nav ul {
+    padding: 10px;
+    margin: 0;
 }

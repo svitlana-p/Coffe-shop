@@ -1,13 +1,13 @@
 import './nav.css'
-const logo = require('./img/Group-8.png');
 
-function Navigation() {
+
+function Navigation({logo}) {
     return (
         <nav>
             <ul>
                 <li><a href="/home" className='logo'><img src={logo} alt='coffe'></img>Coffe House</a></li>
-                <li><a href="#">Our coffee</a></li>
-                <li><a href="#">For your pleasure</a></li>          
+                <li><a href="/home">Our coffee</a></li>
+                <li><a href="/home">For your pleasure</a></li>          
             </ul>
           
         </nav>
