@@ -7,7 +7,9 @@ import './main-about-us-cards.css';
 function MainaboutUsCards ({data}) {
   
     const element = data.map(item => {
-          return  <CardItem {...item}/>
+        const {id, ...itemProps} = item;
+          return  <CardItem key={id}
+          {...itemProps}/>
         })
      
            return (

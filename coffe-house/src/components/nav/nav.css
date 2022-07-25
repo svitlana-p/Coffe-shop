@@ -6,11 +6,15 @@ nav ul {
     gap: 30px;
 }
 nav li {
+    padding: 5px;
     list-style: none;
-    
-}
-nav li a {
     color: #fff;
     text-decoration: none;
     font-size: 12px;
+    
+}
+nav li:hover {
+    background-color: rgba(255, 255, 255, 0.277);
+    color: black;
+    border-radius: 5px;
 }

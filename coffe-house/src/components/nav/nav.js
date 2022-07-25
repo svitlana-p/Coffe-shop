@@ -1,17 +1,37 @@
+import { Component } from 'react';
 import './nav.css'
 
 
-function Navigation({logo}) {
-    return (
+class Navigation extends Component {
+   
+    mainPage = () => {       
+        return (
+            this.props.onPageSelect('main')
+        )
+    }
+    secondPage = () => {
+        return (
+            this.props.onPageSelect('coffe')
+        )
+    }
+    thirdPage = () => {
+        return (
+            this.props.onPageSelect('pleasure')
+        )
+    }
+    render() {
+        return (
         <nav>
             <ul>
-                <li><a href="/home" className='logo'><img src={logo} alt='coffe'></img>Coffe House</a></li>
-                <li><a href="/home">Our coffee</a></li>
-                <li><a href="/home">For your pleasure</a></li>          
+                <li className='logo' onClick={this.mainPage }><img src={this.props.logo} alt='coffe'></img>Coffe House</li>
+                <li onClick={ this.secondPage }>Our coffee</li>
+                <li onClick={this.thirdPage}>For your pleasure</li>          
             </ul>
           
         </nav>
     );
+    }
+    
 }
 
 export default Navigation;
