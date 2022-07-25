@@ -1,19 +1,9 @@
 
-.main-about-us-cards {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url(./Mask\ Group-2.jpg);
-    background-position: top;
-    background-repeat: no-repeat;
-    height: 480px;
-    text-align: center;   
-}
-.main-about-us-cards h3 {
-    padding-bottom: 20px;
-}
+
 .cards-conteiner {
-    display: flex;
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 1fr 1fr;
     justify-content: center;
-    gap: 20px;    
+    gap: 40px;    
 }

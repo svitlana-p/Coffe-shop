@@ -4,24 +4,21 @@ import CardItem from '../main-about-us-card-item/main-about-us-card-item';
 import './main-about-us-cards.css';
 
 
-function MainaboutUsCards ({data}) {
-  
+function MainaboutUsCards ({data, classes, aligns}) {
+    
     const element = data.map(item => {
         const {id, ...itemProps} = item;
           return  <CardItem key={id}
-          {...itemProps}/>
+          {...itemProps}
+          classes={classes}
+          aligns={aligns}
+          />
         })
      
-           return (
-        <div className='main-conteiner'>
-            <div>
-                <h3>Our best</h3>
-            </div>
+           return (          
             <div className='cards-conteiner'>
                 {element}
             </div>
-            
-        </div>
     ) 
         
     

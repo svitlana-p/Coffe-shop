@@ -2,7 +2,10 @@
     flex: none;
     background-color: rgba(255, 255, 255, 0.477);
     border-radius: 10px;
-    box-sizing: border-box;
+}
+.secondary{    
+    background-color: #fff;   
+    box-shadow: 1px 7px 7px rgb(194, 192, 192);; 
 }
 .img-conteiner {
     display: flex;
@@ -12,10 +15,13 @@
 }
 .card-text {
     padding:0 16px;
-    font-size: 14px;
+    font-size: 12px;
 }
 .card-text p:first-child {
     margin-bottom: 0;
+}
+.left {
+    text-align: end;
 }
 .card-text p:last-child {
     font-weight: bold;

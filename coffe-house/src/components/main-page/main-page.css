@@ -12,3 +12,17 @@ header {
     background-image: url(./img/Mask\ Group-1.jpg);
     height: 260px;
 } 
+.main-about-us-cards { 
+    display: flex;
+    flex-direction: column;  
+    background-image: url(./img/Mask\ Group-2.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    height: 480px;
+    text-align: center;  
+    
+}
+.main-about-us-cards h3 {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}

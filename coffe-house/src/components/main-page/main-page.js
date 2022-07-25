@@ -9,7 +9,7 @@ import './main-page.css';
 const cardImage1 = require('./img/card1.png');
 const cardImage2 = require('./img/card2.png');
 const cardImage3 = require('./img/card3.png');  
-
+const classes = 'card-body';
 class MainPage extends Component {
     constructor(props) {
         super(props);
@@ -28,7 +28,11 @@ class MainPage extends Component {
                 <main>
                     <MainAboutUs />
                     <div className="main-about-us-cards">
-                        <MainaboutUsCards data={this.state.data}/>
+                        <div>
+                        <h3>Our best</h3>
+                        </div>
+                        <MainaboutUsCards data={this.state.data}
+                        classes={classes}/>
                     </div>
                 </main>           
             </>            
