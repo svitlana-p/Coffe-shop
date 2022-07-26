@@ -83,33 +83,18 @@ class App extends Component {
     render () {
         const {data, term, filter} = this.state;
         const newData= this.filterCards(this.search(data, term), filter);
+        let headerPagePart;
+        let headerClassName;
+        let mainPagePart;
         if (this.state.renderHeader === 'main') {
-            return (
-                <div className='App'>
-                    <header className='main-page'>
-                        <Navigation logo={logoBeansW}
-                        onPageSelect = {this.onPageSelect}
-                        /> 
-                        <MainHeader />                                    
-                    </header>                 
-                    <MainPage onPageSelect = {this.onPageSelect}/>
-                    <footer>
-                        <Navigation logo = {logoBeansB}
-                        onPageSelect = {this.onPageSelect}
-                        />
-                    <img  src={logo} alt='logo'></img>
-                </footer >
-                </div>
-            )
+            headerPagePart = <MainHeader onPageSelect = {this.onPageSelect}/>      
+            headerClassName ='main-page';                                      
+            mainPagePart = <MainPage onPageSelect = {this.onPageSelect}/>
         } else if (this.state.renderHeader === 'coffe') {
-            return (
-                <div className='App'>
-                    <header className='other-page'>
-                        <Navigation logo={logoBeansW}
-                        onPageSelect = {this.onPageSelect} /> 
-                        <OurCoffeHeader />                                       
-                    </header>    
-                    <main>
+            headerPagePart = <OurCoffeHeader /> 
+            headerClassName ='other-page';                       
+            mainPagePart = 
+                <main>
                     <div>
                         < AboutBeans image = {imgGirl} 
                             headerText = {headerText}/>
@@ -119,28 +104,16 @@ class App extends Component {
                                 <AppFilter onFilterSelect={this.onFilterSelect}/>
                             </div>
                             < MainaboutUsCards data={newData}
-                            classes={classes}
-                            aligns={aligns}
-                            onPageSelect = {this.onPageSelect}/>
+                                classes={classes}
+                                aligns={aligns}
+                                onPageSelect = {this.onPageSelect}/>
                         </div>
                     </div>
-                    </main>                  
-                    <footer>
-                        <Navigation logo = {logoBeansB}
-                        onPageSelect = {this.onPageSelect}
-                        />
-                    <img  src={logo} alt='logo'></img>
-                </footer >
-                </div>
-            )
-        } else if (this.state.renderHeader === 'pleasure') {
-            return (
-                <div className='App'>
-                    <header className='other-page'>
-                        <Navigation logo={logoBeansW}
-                        onPageSelect = {this.onPageSelect} /> 
-                        <YourPleasure />                                       
-                    </header>                 
+                </main>
+        }  else if (this.state.renderHeader === 'pleasure') {
+            headerPagePart =  <YourPleasure />;
+            headerClassName ='other-page';   
+            mainPagePart =            
                     <main>
                         <div>
                             < AboutBeans image = {imgCoffe}
@@ -151,31 +124,32 @@ class App extends Component {
                                 classes={classes}
                                 aligns={aligns}
                                 onPageSelect = {this.onPageSelect}/>
-                        </div>
+                            </div>
                         </div>    
                     </main>
-                    <footer>
-                        <Navigation logo = {logoBeansB}
-                        onPageSelect = {this.onPageSelect}
-                        />
-                    <img  src={logo} alt='logo'></img>
-                </footer >
-                </div>
-            )
-        }else if (this.state.renderHeader === 'about') {
+                    
+        }  else if (this.state.renderHeader === 'about') {
+            headerPagePart =  <OurCoffeHeader />;                                       
+            headerClassName ='other-page';                 
+            mainPagePart = 
+                        <main>
+                            <div>
+                                < AboutBeans image = {imgCoffeAbout} 
+                                    headerText = {headerText2}
+                                    />
+                            </div>
+                        </main>
+        }
             return (
                 <div className='App'>
-                    <header className='other-page'>
-                        <Navigation logo={logoBeansW}
-                        onPageSelect = {this.onPageSelect} /> 
-                        <YourPleasure />                                       
-                    </header>                 
-                    <main>
-                        <div>
-                            < AboutBeans image = {imgCoffeAbout} 
-                            headerText = {headerText2}/>
-                        </div>
-                    </main>
+                    <header className={headerClassName}>
+                                    <Navigation logo={logoBeansW}
+                                    onPageSelect = {this.onPageSelect} /> 
+                                    {headerPagePart}                                     
+                    </header>;  
+
+                    {mainPagePart}
+
                     <footer>
                         <Navigation logo = {logoBeansB}
                         onPageSelect = {this.onPageSelect}
@@ -184,7 +158,7 @@ class App extends Component {
                 </footer >
                 </div>
             )
-        }
+        
         
     }
 }
