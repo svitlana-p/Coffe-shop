@@ -14,7 +14,6 @@ nav li {
     
 }
 nav li:hover {
-    background-color: rgba(255, 255, 255, 0.277);
-    color: black;
-    border-radius: 5px;
+    text-shadow: #fff 2px 0 10px;
+    cursor: pointer;
 }

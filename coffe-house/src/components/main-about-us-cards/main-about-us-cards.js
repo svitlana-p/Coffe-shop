@@ -4,7 +4,7 @@ import CardItem from '../main-about-us-card-item/main-about-us-card-item';
 import './main-about-us-cards.css';
 
 
-function MainaboutUsCards ({data, classes, aligns}) {
+function MainaboutUsCards ({data, classes, aligns, onPageSelect}) {
     
     const element = data.map(item => {
         const {id, ...itemProps} = item;
@@ -12,6 +12,7 @@ function MainaboutUsCards ({data, classes, aligns}) {
           {...itemProps}
           classes={classes}
           aligns={aligns}
+          onPageSelect={onPageSelect}
           />
         })
      

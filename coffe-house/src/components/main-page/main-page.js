@@ -32,7 +32,8 @@ class MainPage extends Component {
                         <h3>Our best</h3>
                         </div>
                         <MainaboutUsCards data={this.state.data}
-                        classes={classes}/>
+                        classes={classes}
+                        onPageSelect={this.props.onPageSelect}/>
                     </div>
                 </main>           
             </>            

@@ -18,12 +18,16 @@ class SearchPanel extends Component {
     }
    render () {
     return (
-        <input
-            type='text'
-            className='form-control search-input'
-            placeholder='start typing here' 
-            value={this.state.term}
-            onChange={this.onUpdateSearchLocal}/>
+        <div className='search-panel'>
+            <label htmlFor="search">Looking for</label>
+            <input
+                type='text'
+                name='search'
+                className='search-input'
+                placeholder='start typing here' 
+                value={this.state.term}
+                onChange={this.onUpdateSearchLocal}/>
+        </div>
     )
    }
 }
