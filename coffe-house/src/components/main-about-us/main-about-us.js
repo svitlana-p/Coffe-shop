@@ -1,7 +1,7 @@
-import './main-about-us.css'
+import './main-about-us.css';
 
+import logo from './Beans logo.png';
 
-const logo = require('./Beans logo.png')
 function MainAboutUs () {
     return (
         <div className='main-about-us'>

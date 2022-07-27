@@ -14,13 +14,13 @@ import AppFilter from '../Filter/Filter';
 import './app.css';
 
 
-const logo = require('../Main-about-us/Beans logo.png');
-const logoBeansW = require('./img/Group-8.png');
-const logoBeansB = require('./img/Group.png');
-const imgGirl = require('./img/girl.jpg');
-const imgCoffe = require('./img/coffee.png');
-const imgCoffeAbout = require('./img/arom.jpg');
-const cardImage = require('../Main-page/img/card3.png');
+import logo from '../Main-about-us/Beans logo.png';
+import logoBeansW from './img/Group-8.png';
+import logoBeansB from './img/Group.png';
+import imgGirl from './img/girl.jpg';
+import imgCoffe from './img/coffee.png';
+import imgCoffeAbout from './img/arom.jpg';
+import cardImage from '../Main-page/img/card3.png';
 
 const headerText = 'About our beans';
 const headerText1 = 'About our goods';

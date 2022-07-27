@@ -1,6 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import './main-header.css';
-const logo = require('./Beans logo-1.png')
+
+import logo from'./Beans logo-1.png';
 
 function MainHeader ({onPageSelect}) {
     const onLocalPageSelect = () => {
