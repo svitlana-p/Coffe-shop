@@ -29,6 +29,11 @@ header {
 }
 @media (max-width:800px) {
     .main-about-us-cards {
-        height: 650px;
+        height: 800px;
+    }
+}
+@media (max-width:450px) {
+    .main-about-us-cards {
+        height: 1000px;
     }
 }
