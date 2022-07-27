@@ -20,3 +20,11 @@
     opacity: 100%;
     padding-bottom: 30px;
 }
+@media (max-width:800px) {
+    .conteiner {        
+        flex-direction: column;
+    }
+    .text-cont {
+        width: 50vw;
+    }
+}

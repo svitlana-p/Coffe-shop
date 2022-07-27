@@ -87,11 +87,11 @@ class App extends Component {
         let headerClassName;
         let mainPagePart;
         if (this.state.renderHeader === 'main') {
-            headerPagePart = <MainHeader onPageSelect = {this.onPageSelect}/>      
+            headerPagePart = <MainHeader onPageSelect = {this.onPageSelect}/>;      
             headerClassName ='main-page';                                      
-            mainPagePart = <MainPage onPageSelect = {this.onPageSelect}/>
+            mainPagePart = <MainPage onPageSelect = {this.onPageSelect}/>;
         } else if (this.state.renderHeader === 'coffe') {
-            headerPagePart = <OurCoffeHeader /> 
+            headerPagePart = <OurCoffeHeader />; 
             headerClassName ='other-page';                       
             mainPagePart = 
                 <main>
@@ -146,7 +146,7 @@ class App extends Component {
                                     <Navigation logo={logoBeansW}
                                     onPageSelect = {this.onPageSelect} /> 
                                     {headerPagePart}                                     
-                    </header>;  
+                    </header>  
 
                     {mainPagePart}
 
