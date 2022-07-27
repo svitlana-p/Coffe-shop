@@ -1,0 +1,34 @@
+.card-body{
+    flex: none;
+    background-color: rgba(255, 255, 255, 0.477);
+    border-radius: 10px;
+    width: 200px;
+}
+.card-body:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.secondary{    
+    background-color: #fff;   
+    box-shadow: 1px 7px 7px rgb(194, 192, 192);; 
+}
+.img-conteiner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 170px;
+}
+.card-text {
+    padding:0 16px;
+    font-size: 12px;
+}
+.card-text p:first-child {
+    margin-bottom: 0;
+}
+.left {
+    text-align: end;
+}
+.card-text p:last-child {
+    font-weight: bold;
+    text-align: end;
+}

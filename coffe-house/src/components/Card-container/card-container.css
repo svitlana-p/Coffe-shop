@@ -1,0 +1,19 @@
+.cards-conteiner {
+    display: grid;
+    grid-template-columns: 180px 180px 180px;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    gap: 40px;    
+}
+@media (max-width:800px) {
+    .cards-conteiner {
+        grid-template-columns: 200px 200px;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+}
+@media (max-width:450px) {
+    .cards-conteiner {
+        grid-template-columns: 200px;
+        grid-template-rows: repeat(1fr, 6);
+    }
+}

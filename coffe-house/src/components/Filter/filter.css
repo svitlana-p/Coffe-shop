@@ -1,0 +1,18 @@
+.search-btn{
+    margin-left: 4px;
+    padding: 3px 10px;
+    box-shadow: 1px 7px 7px rgb(194, 192, 192);
+    background-color: #fff;
+    font-size: 12px;
+    width: 100px;
+    height: 30px;
+}
+.buttons-cont {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+.buttons-cont p {
+    padding-right: 1.5vw;
+    margin: 0;
+}

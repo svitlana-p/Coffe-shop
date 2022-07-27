@@ -1,0 +1,10 @@
+.main-header {
+    margin-top: 80px;
+    text-align: center;
+}
+.main-header p {
+    font-size: 24px;
+}
+.btn {
+    padding: 5px 40px;
+}
