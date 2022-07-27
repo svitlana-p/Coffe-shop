@@ -1,31 +1,30 @@
 import { Component } from 'react';
 
-import Navigation from '../nav/nav';
-import OurCoffeHeader from '../header-our-coffe/header-our-coffe';
-import MainHeader from "../main-header/main-header";
-import YourPleasure from '../your-pleasure/your-pleasure';
-import MainPage from '../main-page/main-page';
-import AboutBeans from "../about-beans/about-beans";
-import MainaboutUsCards from "../main-about-us-cards/main-about-us-cards";
-import SearchPanel from '../search/search';
-import AppFilter from '../filter/filter';
+import Navigation from '../Nav/Nav';
+import OurCoffeHeader from '../Header-our-coffe/Header-our-coffe';
+import MainHeader from "../Main-header/Main-header";
+import YourPleasure from '../Header-your-pleasure/Header-your-pleasure';
+import MainPage from '../Main-page/Main-page';
+import AboutBeans from "../About-beans/About-beans";
+import MainaboutUsCards from "../Card-container/Card-container";
+import SearchPanel from '../Search/Search';
+import AppFilter from '../Filter/Filter';
 
 
 import './app.css';
 
 
-const logo = require('../main-about-us/Beans logo.png');
+const logo = require('../Main-about-us/Beans logo.png');
 const logoBeansW = require('./img/Group-8.png');
 const logoBeansB = require('./img/Group.png');
-
 const imgGirl = require('./img/girl.jpg');
-const headerText = 'About our beans';
 const imgCoffe = require('./img/coffee.png');
-const headerText1 = 'About our goods';
 const imgCoffeAbout = require('./img/arom.jpg');
-const headerText2 = 'About it';
+const cardImage = require('../Main-page/img/card3.png');
 
-const cardImage = require('../main-page/img/card3.png');
+const headerText = 'About our beans';
+const headerText1 = 'About our goods';
+const headerText2 = 'About it';
 const classes = 'card-body secondary';
 const aligns = 'left'
 

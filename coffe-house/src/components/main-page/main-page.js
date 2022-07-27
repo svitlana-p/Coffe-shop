@@ -1,8 +1,8 @@
 import { Component } from "react";
 
 
-import MainAboutUs from "../main-about-us/main-about-us";
-import MainaboutUsCards from "../main-about-us-cards/main-about-us-cards";
+import MainAboutUs from "../Main-about-us/Main-about-us";
+import MainaboutUsCards from "../Card-container/Card-container";
 
 import './main-page.css';
 

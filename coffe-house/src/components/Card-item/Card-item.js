@@ -1,4 +1,4 @@
-import ('./main-about-us-card-item.css')
+import ('./card-item.css')
 
 
 function CardItem(props) {

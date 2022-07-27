@@ -1,4 +1,4 @@
-import ('../header-our-coffe/header-our-coffe.css');
+import ('./header-our-coffe.css');
 
 function OurCoffeHeader () {
     return (

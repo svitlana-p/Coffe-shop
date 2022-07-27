@@ -1,7 +1,7 @@
 
-import CardItem from '../main-about-us-card-item/main-about-us-card-item';
+import CardItem from '../Card-item/Card-item';
 
-import './main-about-us-cards.css';
+import './card-container.css';
 
 
 function MainaboutUsCards ({data, classes, aligns, onPageSelect}) {

@@ -2,7 +2,7 @@ import { Component} from 'react';
 import ('./about-beans.css');
 
 
-const logoBeans = require('../main-about-us/Beans logo.png')
+const logoBeans = require('../Main-about-us/Beans logo.png')
 
 class AboutBeans extends Component {
     render () {
