@@ -156,9 +156,7 @@ class App extends Component {
                     <img  src={logo} alt='logo'></img>
                 </footer >
                 </div>
-            )
-        
-        
+            )      
     }
 }
 
