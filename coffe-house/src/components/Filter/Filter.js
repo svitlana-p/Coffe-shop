@@ -26,7 +26,6 @@ const AppFilter = ({ onFilterSelect}) => {
             <p>Or filter</p>
             {buttons}           
         </div>
-
     );
 }
 

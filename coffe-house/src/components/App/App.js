@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { useState } from 'react';
 
 import Navigation from '../Nav/Nav';
 import OurCoffeHeader from '../Header-our-coffe/Header-our-coffe';
@@ -26,31 +26,29 @@ const headerText = 'About our beans';
 const headerText1 = 'About our goods';
 const headerText2 = 'About it';
 const classes = 'card-body secondary';
-const aligns = 'left'
+const aligns = 'left';
 
 
-class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: [
-                {url: cardImage, header: 'AROMISTICO Coffee 1 kg', country:'Brasil', prise: '6.99$', id:1},
-                {url: cardImage, header: 'AROMISTICO Coffee 1 kg', country:'Kenya', prise: '6.99$', id:2},
-                {url: cardImage, header: 'AROMISTICO Coffee 1 kg', country:'Columbia', prise: '6.99$', id:3},
-                {url: cardImage, header: 'AROMISTICO Coffee 1 kg', country:'Brasil', prise: '6.99$', id:4},
-                {url: cardImage, header: 'AROMISTICO Coffee 1 kg', country:'Brasil', prise: '6.99$', id:5},
-                {url: cardImage, header: 'AROMISTICO Coffee 1 kg', country:'Brasil', prise: '6.99$', id:6}
-            ],
-            term: '',
-            filter: '',
-            renderHeader : 'main'
-
-        }
+const App = () => {   
+     
+    const data = [
+        {url: cardImage, header: 'AROMISTICO Coffee 1 kg', country:'Brasil', prise: '6.99$', id:1},
+        {url: cardImage, header: 'AROMISTICO Coffee 1 kg', country:'Kenya', prise: '6.99$', id:2},
+        {url: cardImage, header: 'AROMISTICO Coffee 1 kg', country:'Columbia', prise: '6.99$', id:3},
+        {url: cardImage, header: 'AROMISTICO Coffee 1 kg', country:'Brasil', prise: '6.99$', id:4},
+        {url: cardImage, header: 'AROMISTICO Coffee 1 kg', country:'Brasil', prise: '6.99$', id:5},
+        {url: cardImage, header: 'AROMISTICO Coffee 1 kg', country:'Brasil', prise: '6.99$', id:6}
+    ];
+    
+    const [term, setTerm] = useState('');
+    const [filter, setFilter] = useState('');
+    const [renderHeader, setRenderHeader] = useState('main');
+        
+    const onPageSelect = renderHeader => {
+        setRenderHeader(renderHeader);        
     }
-    onPageSelect = (renderHeader) => {
-        this.setState({renderHeader});        
-    }
-    search = (items, term) => {
+
+    const search = (items, term) => {
         if (term.length === 0) {
             return items;
         }
@@ -59,10 +57,12 @@ class App extends Component {
             return item.country.indexOf(term) > -1
         })
     }
-    onUpdateSearch = term => {
-        this.setState({term})
+
+    const onUpdateSearch = term => {
+        setTerm(term)
     }
-    filterCards = (items, filter) => {
+
+    const filterCards = (items, filter) => {
         switch (filter) {
             case 'brasil': 
                 return items.filter(item => item.country === 'Brasil');
@@ -74,90 +74,86 @@ class App extends Component {
                 return items;
         }
     }
-    onFilterSelect = (filter) => {
-        console.log(filter)
-        this.setState({filter})
+
+    const onFilterSelect = (filter) => {
+        setFilter(filter)
     }
 
-    render () {
-        const {data, term, filter} = this.state;
-        const newData= this.filterCards(this.search(data, term), filter);
-        let headerPagePart;
-        let headerClassName;
-        let mainPagePart;
-        if (this.state.renderHeader === 'main') {
-            headerPagePart = <MainHeader onPageSelect = {this.onPageSelect}/>;      
-            headerClassName ='main-page';                                      
-            mainPagePart = <MainPage onPageSelect = {this.onPageSelect}/>;
-        } else if (this.state.renderHeader === 'coffe') {
-            headerPagePart = <OurCoffeHeader />; 
-            headerClassName ='other-page';                       
-            mainPagePart = 
-                <main>
+    
+    const newData= filterCards(search(data, term), filter);
+    let headerPagePart;
+    let headerClassName;
+    let mainPagePart;
+
+    if (renderHeader === 'main') {
+        headerPagePart = <MainHeader onPageSelect = {onPageSelect}/>;      
+        headerClassName ='main-page';                                      
+        mainPagePart = <MainPage onPageSelect = {onPageSelect}/>;
+    } else if (renderHeader === 'coffe') {
+        headerPagePart = <OurCoffeHeader />; 
+        headerClassName ='other-page';                       
+        mainPagePart = 
+            <main>
+                <div>
+                    < AboutBeans image = {imgGirl} 
+                        headerText = {headerText}/>
                     <div>
-                        < AboutBeans image = {imgGirl} 
-                            headerText = {headerText}/>
-                        <div>
-                            <div className='controls'>
-                                <SearchPanel onUpdateSearch={this.onUpdateSearch}/>
-                                <AppFilter onFilterSelect={this.onFilterSelect}/>
-                            </div>
-                            < MainaboutUsCards data={newData}
-                                classes={classes}
-                                aligns={aligns}
-                                onPageSelect = {this.onPageSelect}/>
+                        <div className='controls'>
+                            <SearchPanel onUpdateSearch={onUpdateSearch}/>
+                            <AppFilter onFilterSelect={onFilterSelect}/>
                         </div>
+                        < MainaboutUsCards data={newData}
+                            classes={classes}
+                            aligns={aligns}
+                            onPageSelect = {onPageSelect}/>
                     </div>
-                </main>
-        }  else if (this.state.renderHeader === 'pleasure') {
-            headerPagePart =  <YourPleasure />;
-            headerClassName ='other-page';   
-            mainPagePart =            
-                    <main>
-                        <div>
-                            < AboutBeans image = {imgCoffe}
-                                headerText = {headerText1} 
-                                />
-                            <div>
-                                < MainaboutUsCards data={this.state.data}
-                                classes={classes}
-                                aligns={aligns}
-                                onPageSelect = {this.onPageSelect}/>
-                            </div>
-                        </div>    
-                    </main>
-                    
-        }  else if (this.state.renderHeader === 'about') {
-            headerPagePart =  <OurCoffeHeader />;                                       
-            headerClassName ='other-page';                 
-            mainPagePart = 
-                        <main>
-                            <div>
-                                < AboutBeans image = {imgCoffeAbout} 
-                                    headerText = {headerText2}
-                                    />
-                            </div>
-                        </main>
-        }
-            return (
-                <div className='App'>
-                    <header className={headerClassName}>
-                                    <Navigation logo={logoBeansW}
-                                    onPageSelect = {this.onPageSelect} /> 
-                                    {headerPagePart}                                     
-                    </header>  
-
-                    {mainPagePart}
-
-                    <footer>
-                        <Navigation logo = {logoBeansB}
-                        onPageSelect = {this.onPageSelect}
-                        />
-                    <img  src={logo} alt='logo'></img>
-                </footer >
                 </div>
-            )      
+            </main>
+    }  else if (renderHeader === 'pleasure') {
+        headerPagePart =  <YourPleasure />;
+        headerClassName ='other-page';   
+        mainPagePart =            
+            <main>
+                <div>
+                    < AboutBeans image = {imgCoffe}
+                        headerText = {headerText1} />
+                    <div>
+                        < MainaboutUsCards data={data}
+                            classes={classes}
+                            aligns={aligns}
+                            onPageSelect = {onPageSelect}/>
+                    </div>
+                </div>    
+            </main>                    
+    }  else if (renderHeader === 'about') {
+        headerPagePart =  <OurCoffeHeader />;                                       
+        headerClassName ='other-page';                 
+        mainPagePart = 
+            <main>
+                <div>
+                    < AboutBeans image = {imgCoffeAbout} 
+                        headerText = {headerText2} />
+                </div>
+            </main>
     }
+    return (
+        <div className='App'>
+            <header className={headerClassName}>
+                <Navigation logo={logoBeansW}
+                    onPageSelect = {onPageSelect} /> 
+                {headerPagePart}                                     
+            </header>  
+
+            {mainPagePart}
+
+            <footer>
+                <Navigation logo = {logoBeansB}
+                    onPageSelect = {onPageSelect} />
+                <img  src={logo} alt='logo'></img>
+            </footer >
+        </div>
+    )      
+    
 }
 
 export default App;

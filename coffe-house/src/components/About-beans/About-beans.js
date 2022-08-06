@@ -1,19 +1,17 @@
-import { Component} from 'react';
 import ('./about-beans.css');
-
 
 const logoBeans = require('../Main-about-us/Beans logo.png')
 
-class AboutBeans extends Component {
-    render () {
-        return (
-            <>
+const AboutBeans = props => {
+    
+    return (
+        <>
             <div className='conteiner'>
                 <div className='img-cont'>
-                    <img src={this.props.image} alt="girl with coffe" />
+                    <img src={props.image} alt="girl with coffe" />
                 </div>
                 <div className='text-cont'>
-                    <h3>{this.props.headerText}</h3>
+                    <h3>{props.headerText}</h3>
                     <img src={logoBeans} alt="logo" />                    
                     <p>Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.</p>
                     <p>Afraid at highly months do things on at. Situation recommend objection do intention
@@ -24,10 +22,9 @@ class AboutBeans extends Component {
                 </div>
             </div>
             <hr className='hr'/>
-            </>
+        </>
             
-        )
-    }
+    )    
     
 }
 

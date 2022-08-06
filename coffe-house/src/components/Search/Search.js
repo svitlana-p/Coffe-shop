@@ -1,22 +1,18 @@
-import { Component } from 'react';
+import { useState } from 'react';
 
 import './search.css';
 
 
-class SearchPanel extends Component {
-    constructor (props) {
-        super(props);
-        this.state= {
-            term: ''
-        }
-    }
+const SearchPanel = props => {
+    
+    const [term, setTerm] = useState('');        
 
-    onUpdateSearchLocal = e => {
+    const onUpdateSearchLocal = e => {
         const term = e.target.value;
-        this.setState({term});
-        this.props.onUpdateSearch(term)
+        setTerm(term);
+        props.onUpdateSearch(term);
     }
-   render () {
+   
     return (
         <div className='search-panel'>
             <label htmlFor="search">Looking for</label>
@@ -25,11 +21,11 @@ class SearchPanel extends Component {
                 name='search'
                 className='search-input'
                 placeholder='start typing here' 
-                value={this.state.term}
-                onChange={this.onUpdateSearchLocal}/>
+                value={term}
+                onChange={onUpdateSearchLocal}/>
         </div>
     )
-   }
+   
 }
 
 

@@ -1,36 +1,31 @@
-import { Component } from 'react';
-import './nav.css'
+import './nav.css';
 
-
-class Navigation extends Component {
+const Navigation = props => {
    
-    mainPage = () => {       
+    const mainPage = () => {       
         return (
-            this.props.onPageSelect('main')
+            props.onPageSelect('main')
         )
     }
-    secondPage = () => {
+    const secondPage = () => {
         return (
-            this.props.onPageSelect('coffe')
+            props.onPageSelect('coffe')
         )
     }
-    thirdPage = () => {
+    const thirdPage = () => {
         return (
-            this.props.onPageSelect('pleasure')
+            props.onPageSelect('pleasure')
         )
     }
-    render() {
-        return (
+    return (
         <nav>
             <ul>
-                <li className='logo' onClick={this.mainPage }><img src={this.props.logo} alt='coffe'></img>Coffe House</li>
-                <li onClick={ this.secondPage }>Our coffee</li>
-                <li onClick={this.thirdPage}>For your pleasure</li>          
-            </ul>
-          
+                <li className='logo' onClick={mainPage }><img src={props.logo} alt='coffe'></img>Coffe House</li>
+                <li onClick={secondPage }>Our coffee</li>
+                <li onClick={thirdPage}>For your pleasure</li>          
+            </ul>          
         </nav>
     );
-    }
     
 }
 

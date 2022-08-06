@@ -3,12 +3,12 @@ import './main-header.css';
 
 import logo from'./Beans logo-1.png';
 
-function MainHeader ({onPageSelect}) {
+const MainHeader = ({onPageSelect}) => {
     const onLocalPageSelect = () => {
         return (
           onPageSelect('coffe')
         ) 
-      }
+    }
     return (
         <div className='main-header'>
             <h1>Everything You Love About Coffee</h1>
